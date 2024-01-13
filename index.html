@@ -15,9 +15,37 @@
         <div class="weather">
             <img src="rain.png" class="wether-icon">
             <h1 class="temp">22°C</h1>
+            <div class="city">New York</div>
+            <div class="details">
+                <div class="col">
+                    <img src="humidity.png" alt="Humidity">
+                    <div>
+                        <p class="humidity">50%</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+                <div class="col">
+                    <img src="wind.png" alt="wind">
+                    <div>
+                        <p class="wind">15 km</p>
+                        <p>Humidity</p>
+                    </div>
+                </div>
+            </div>
         </div>
+        
 
     </div>
+    <script>
+        const apiKey="b10a04af46a2e395aebbc9437e6a96a9";
+        const apiUrl="https://api.openweathermap.org/data/2.5/weather?q=India&units=metric";
+        async function checkWeather(){
+            const response = await fetch(apiUrl + `&appid=${apiKey}`);
+            var data = await response.json();
+            console.log(data);
+        }
+        checkWeather()
+    </script>
 </body>
 </html>
 
